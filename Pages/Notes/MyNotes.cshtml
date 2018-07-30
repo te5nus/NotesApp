@@ -39,7 +39,7 @@
                     @foreach (var note in Model.Notes)
                     {
                         <tr>
-                            <td>@note?.Title</td>
+                            <td><img src="@note?.ImgSrc" width="50" height="50"/></td>
                             <td>@note?.Title</td>
                             <td>
                                 <form method="post">

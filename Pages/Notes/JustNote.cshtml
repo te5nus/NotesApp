@@ -8,6 +8,10 @@
 <div asp-validation-summary="All"></div>
 <form method="GET">
     <div>
+        <label>image</label><br />
+        <p><img src="@Model.Note.ImgSrc" width="80" height="80" /></p>
+    </div>
+    <div>
         <label>title</label><br />
         <p>@Model.Note.Title</p>
     </div>
