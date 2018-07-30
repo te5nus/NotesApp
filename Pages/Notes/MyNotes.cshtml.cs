@@ -24,6 +24,22 @@ namespace NotesApp.Pages
             Notes = await _context.Notes.AsNoTracking().ToListAsync();
         }
 
+        public async Task<IActionResult> OnPostFilterByTitleAsync(string title)
+        {
+            var temp = from m in _context.Notes select m;
+            if (!String.IsNullOrEmpty(title))
+            {
+                temp = temp.Where(s => s.Title.Contains(title));
+            }
+            Notes = await temp.ToListAsync();
+            if (Notes == null)
+            {
+                return NotFound();
+            }
+            return Page();
+
+        }
+
         public async Task<IActionResult> OnPostDeleteAsync(Guid id)
         {
             var note = await _context.Notes.FindAsync(id);

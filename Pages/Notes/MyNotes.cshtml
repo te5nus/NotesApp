@@ -10,7 +10,7 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th><form method="POST">
+                    <th><form method="post">
                             <h1>enter title for search</h1>
                             <input type="text" id="title" name="title" value="" />
                             <input type="submit" asp-page-handler="FilterByTitle" value="find" />
@@ -39,8 +39,8 @@
                     @foreach (var note in Model.Notes)
                     {
                         <tr>
-                            <td>@note.Title</td>
-                            <td>@note.Title</td>
+                            <td>@note?.Title</td>
+                            <td>@note?.Title</td>
                             <td>
                                 <form method="post">
                                     <a asp-page="JustNote" asp-route-id="@note.Id">show</a>
