@@ -11,14 +11,19 @@
             <thead>
                 <tr>
                     <th><form method="post">
-                            <h1>enter title for search</h1>
-                            <input type="text" id="title" name="title" value="" />
-                            <input type="submit" asp-page-handler="FilterByTitle" value="find" />
+                            <center>
+                                <h1>enter title for search</h1>
+                                <input type="text" id="title" name="title" value="" />
+                                <input type="submit" asp-page-handler="FilterByTitle" value="find" />
+                            </center>
                         </form>
                     </th>
                     <th>
                         <form method="get" action="/Notes/NewNote">
-                            <input type="submit" value="create" />
+                            <center>
+                                <h1>tap here to create a new note</h1>
+                                <input type="submit" value="create" />
+                            </center>
                         </form>
                     </th>
                 </tr>
@@ -38,18 +43,20 @@
                 <tbody>
                     @foreach (var note in Model.Notes)
                     {
-                        <tr>
-                            <td><img src="@note?.ImgSrc" width="50" height="50"/></td>
-                            <td>@note?.Title</td>
-                            <td>
-                                <form method="post">
-                                    <a asp-page="JustNote" asp-route-id="@note.Id">show</a>
-                                    <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
-                                        Удалить
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
+                    <tr>
+                        <td><img src="@note?.ImgSrc" width="50" height="50" /></td>
+                        <td>@note?.Title</td>
+                        <td>
+                            <form method="post">
+                                <a asp-page="JustNote" asp-route-id="@note.Id">watch note</a>
+                            </form>
+                        </td>
+                        <td>
+                            <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
+                                delete
+                            </button>
+                        </td>
+                    </tr>
                     }
                 </tbody>
             </table>

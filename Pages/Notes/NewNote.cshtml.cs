@@ -26,6 +26,7 @@ namespace NotesApp.Pages.Notes
         {
             if (ModelState.IsValid)
             {
+                
                 Note.SetId();
                 Note.SetImgSrc();
                 _context.Notes.Add(Note);

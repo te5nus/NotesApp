@@ -19,6 +19,10 @@ namespace NotesApp.Model
         {
             Id = Guid.NewGuid();
         }
+        public void SetUser(IdentityUser user)
+        {
+            User = user;
+        }
         public void SetImgSrc()
         {
             ImgSrc = "https://avatars.dicebear.com/v2/identicon/" + Id.ToString() + ".svg";
