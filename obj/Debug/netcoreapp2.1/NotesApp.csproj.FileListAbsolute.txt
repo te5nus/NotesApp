@@ -9,7 +9,6 @@ C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.c
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.csproj.CoreCompileInputs.cache
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.RazorAssemblyInfo.cache
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.RazorAssemblyInfo.cs
-C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.AssemblyInfoInputs.cache
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.AssemblyInfo.cs
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.TagHelpers.input.cache
@@ -30,3 +29,6 @@ C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.V
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.dll
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.pdb
 C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\NotesApp.csproj.CopyComplete
+C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\Razor\Pages\Notes\MyNotes.g.cshtml.cs
+C:\Users\Roman\source\repos\NotesApp\NotesApp\obj\Debug\netcoreapp2.1\Razor\Pages\Notes\NewNote.g.cshtml.cs

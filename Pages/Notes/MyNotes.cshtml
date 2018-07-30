@@ -1,0 +1,58 @@
+﻿@page
+@model NotesApp.Pages.MyNotesModel
+@{
+    ViewData["Title"] = "MyNotes";
+}
+
+<div class="container body-content">
+    
+    <div class="panel-header search-item-form">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th><form method="POST">
+                            <h1>enter title for search</h1>
+                            <input type="text" id="title" name="title" value="" />
+                            <input type="submit" asp-page-handler="FilterByTitle" value="find" />
+                        </form>
+                    </th>
+                    <th>
+                        <form method="get" action="/Notes/NewNote">
+                            <input type="submit" value="create" />
+                        </form>
+                    </th>
+                </tr>
+            </thead>
+        </table>
+    </div>
+    
+        <br />
+        <br />
+        <div class="panel panel-default notes-panel">
+            <div class="panel-heading">notes list</div>
+
+            <table class="table">
+                <thead>
+                    <tr><th>identicon</th><th>title</th><th></th></tr>
+                </thead>
+                <tbody>
+                    @foreach (var note in Model.Notes)
+                    {
+                        <tr>
+                            <td>@note.Title</td>
+                            <td>@note.Title</td>
+                            <td>
+                                <form method="post">
+                                    <a asp-page="MyNote" asp-route-id="@note.Id">show</a>
+                                    <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
+                                        Удалить
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+</div>
+

@@ -12,6 +12,7 @@ using Microsoft.EntityFrameworkCore;
 using NotesApp.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using NotesApp.Model;
 
 namespace NotesApp
 {
@@ -64,7 +65,12 @@ namespace NotesApp
 
             app.UseAuthentication();
 
-            app.UseMvc();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                    name: "default",
+                    template: "{controller}/{action=Index}/{id?}");
+            });
         }
     }
 }
