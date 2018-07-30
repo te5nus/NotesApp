@@ -43,7 +43,7 @@
                             <td>@note.Title</td>
                             <td>
                                 <form method="post">
-                                    <a asp-page="MyNote" asp-route-id="@note.Id">show</a>
+                                    <a asp-page="JustNote" asp-route-id="@note.Id">show</a>
                                     <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
                                         Удалить
                                     </button>

@@ -1,0 +1,18 @@
+﻿@page
+@model NotesApp.Pages.Notes.JustNoteModel
+@{
+    ViewData["Title"] = "JustNote";
+}
+
+<h2>JustNote</h2>
+<div asp-validation-summary="All"></div>
+<form method="GET">
+    <div>
+        <label>title</label><br />
+        <p>@Model.Note.Title</p>
+    </div>
+    <div>
+        <label>body</label><br />
+        <p>@Model.Note.Body</p>
+    </div>
+</form>
