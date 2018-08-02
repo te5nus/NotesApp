@@ -52,9 +52,11 @@
                             </form>
                         </td>
                         <td>
-                            <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
-                                delete
-                            </button>
+                            <form method="post">
+                                <button type="submit" asp-page-handler="delete" asp-route-id="@note.Id">
+                                    delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                     }
