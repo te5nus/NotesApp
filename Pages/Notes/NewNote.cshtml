@@ -1,14 +1,26 @@
 ﻿@page
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
 @model NotesApp.Pages.Notes.NewNoteModel
 @{
     ViewData["Title"] = "NewNote";
 }
 
 <h2>NewNote</h2>
-<div asp-validation-summary="All"></div>
-<form method="POST">
-    <div><label>title</label><br /><input asp-for="Note.Title" /></div>
-    <div><label>body</label><br /><input asp-for="Note.Body" /></div>
-    <br />
-    <input type="submit" value="create" />
-</form>
+
+@if (SignInManager.IsSignedIn(User))
+{
+    <div asp-validation-summary="All"></div>
+    <form method="POST">
+        <div><label>title</label><br /><input asp-for="Note.Title" /></div>
+        <div><label>body</label><br /><input asp-for="Note.Body" /></div>
+        <div><label>user</label><br /><input type="hidden" id="user" name="user" value="@UserManager.GetUserId(User)" ></div>
+        <input type="submit" value="create" />
+    </form>
+}
+else
+{ 
+    <h1>err</h1>
+}

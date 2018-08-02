@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using NotesApp.Data;
 using NotesApp.Model;
+using Microsoft.AspNetCore.Identity;
 
 namespace NotesApp.Pages.Notes
 {
@@ -22,11 +23,11 @@ namespace NotesApp.Pages.Notes
         {
 
         }
-        public async Task<IActionResult> OnPostAsync()
+        public async Task<IActionResult> OnPostAsync(IdentityUser user)
         {
             if (ModelState.IsValid)
             {
-                
+                Note.SetUser(user);
                 Note.SetId();
                 Note.SetImgSrc();
                 _context.Notes.Add(Note);

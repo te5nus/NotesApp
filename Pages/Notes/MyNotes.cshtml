@@ -1,36 +1,47 @@
 ﻿@page
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
 @model NotesApp.Pages.MyNotesModel
 @{
     ViewData["Title"] = "MyNotes";
 }
 
-<div class="container body-content">
-    
-    <div class="panel-header search-item-form">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th><form method="post">
-                            <center>
-                                <h1>enter title for search</h1>
-                                <input type="text" id="title" name="title" value="" />
-                                <input type="submit" asp-page-handler="FilterByTitle" value="find" />
-                            </center>
-                        </form>
-                    </th>
-                    <th>
-                        <form method="get" action="/Notes/NewNote">
-                            <center>
-                                <h1>tap here to create a new note</h1>
-                                <input type="submit" value="create" />
-                            </center>
-                        </form>
-                    </th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    
+@if (SignInManager.IsSignedIn(User))
+{
+    <form method="get">
+        <input type="hidden" id="user" value="@UserManager.GetUserId(User)" />
+    </form>
+    <div class="container body-content">
+
+        <div class="panel-header search-item-form">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            <form method="post">
+                                <center>
+                                    <h1>enter title for search</h1>
+                                    <input type="text" id="title" name="title" value="" />
+                                    <input type="submit" asp-page-handler="FilterByTitle" value="find" />
+                                </center>
+                            </form>
+                        </th>
+                        <th>
+                            <form method="get" action="/Notes/NewNote">
+                                <center>
+                                    <h1>tap here to create a new note</h1>
+                                    <input type="submit" value="create" />
+                                </center>
+                            </form>
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+
         <br />
         <br />
         <div class="panel panel-default notes-panel">
@@ -46,6 +57,7 @@
                     <tr>
                         <td><img src="@note?.ImgSrc" width="50" height="50" /></td>
                         <td>@note?.Title</td>
+                        <td>@note.User</td>
                         <td>
                             <form method="post">
                                 <a asp-page="JustNote" asp-route-id="@note.Id">watch note</a>
@@ -63,5 +75,12 @@
                 </tbody>
             </table>
         </div>
-</div>
+    </div>
+}
+else
+{
+    <br />
+    <h1>you have to register or login first</h1>
+
+}
 

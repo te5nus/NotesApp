@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,7 @@ namespace NotesApp.Pages
             _context = db;
         }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(IdentityUser user)
         {
             Notes = await _context.Notes.AsNoTracking().ToListAsync();
         }
